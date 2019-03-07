@@ -16,44 +16,44 @@ import (
 
 // A File is the parsed, interpreted form of a go.mod file.
 type File struct {
-	Module  *Module
-	Go      *Go
-	Require []*Require
-	Exclude []*Exclude
-	Replace []*Replace
+	Module  *Module    `json:"module"`
+	Go      *Go        `json:"go"`
+	Require []*Require `json:"require"`
+	Exclude []*Exclude `json:"exclude"`
+	Replace []*Replace `json:"replace"`
 
 	Syntax *FileSyntax
 }
 
 // A Module is the module statement.
 type Module struct {
-	Mod    module.Version
+	Mod    module.Version `json:"mod"`
 	Syntax *Line
 }
 
 // A Go is the go statement.
 type Go struct {
-	Version string // "1.23"
+	Version string `json:"version"` // "1.23"
 	Syntax  *Line
 }
 
 // A Require is a single require statement.
 type Require struct {
-	Mod      module.Version
-	Indirect bool // has "// indirect" comment
+	Mod      module.Version `json:"mod"`
+	Indirect bool           `json:"indirect"` // has "// indirect" comment
 	Syntax   *Line
 }
 
 // An Exclude is a single exclude statement.
 type Exclude struct {
-	Mod    module.Version
+	Mod    module.Version `json:"mod"`
 	Syntax *Line
 }
 
 // A Replace is a single replace statement.
 type Replace struct {
-	Old    module.Version
-	New    module.Version
+	Old    module.Version `json:"old"`
+	New    module.Version `json:"new"`
 	Syntax *Line
 }
 

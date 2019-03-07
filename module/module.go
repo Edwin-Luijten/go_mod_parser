@@ -28,7 +28,7 @@ import (
 
 // A Version is defined by a module path and version pair.
 type Version struct {
-	Path string
+	Path string `json:"path"`
 
 	// Version is usually a semantic version in canonical form.
 	// There are two exceptions to this general rule.
