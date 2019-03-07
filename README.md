@@ -3,7 +3,7 @@
 This module is extracted from https://github.com/golang/vgo/tree/master/vendor/cmd/go/internal/modfile
 
 ## Installation
-``` go get github.com/edwin-luijten/go_mod_parser@v0.0 ```  
+``` go get github.com/edwin-luijten/go_mod_parser ```  
 
 ## Usage
 
